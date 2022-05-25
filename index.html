@@ -13,80 +13,17 @@
       background-image: url('imgs/melsb.webp');
       background-repeat: no-repeat;
       background-size: 100%;
+      background-attatchment: fixed;
     }
 
-    .open-overlay {
-      cursor: cross;
-      outline: none;
-      border: none;
-      border-radius: 15px;
-      font-size: 300%;
-      padding: 10px;
-      background-color: rgba(255, 255, 255,0.5);
-      cursor: cell;
-      color: white;
-    }
-
-    /* to the body element */
-    .noscroll { overflow: hidden; }
-    
-    .overlay { 
-       position: fixed; 
-       overflow-y: scroll;
-       top: 0; right: 0; bottom: 0; left: 0; }
-    
-    [aria-hidden="true"] { display: none; }
-    [aria-hidden="false"] { display: block; }
-    
-    
-
-    
-
-    
   </style>
 
   <script>
-
-    var body = document.body,
-    overlay = document.querySelector(".overlay"),
-    overlayBtts = document.querySelectorAll('button[class$="overlay"]');
-  
-  [].forEach.call(overlayBtts, function (btt) {
-    btt.addEventListener(
-      "click",
-      function () {
-        /* Detect the button class name */
-        var overlayOpen = this.className === "open-overlay";
-  
-        /* Toggle the aria-hidden state on the overlay and the 
-              no-scroll class on the body */
-        overlay.setAttribute("aria-hidden", !overlayOpen);
-        body.classList.toggle("noscroll", overlayOpen);
-  
-        /* On some mobile browser when the overlay was previously
-              opened and scrolled, if you open it again it doesn't 
-              reset its scrollTop property */
-        overlay.scrollTop = 0;
-      },
-      false
-    );
-  });
-
 
     
   </script>
   
   <body>
-    <div style="text-align: center; margin-top: 10%;">
-      
-      <button type="button" class="open-overlay">Launch</button>
-
-    </div>
-    <section class="overlay" aria-hidden="true">
-      <div>
-        <p>wassup</p>
-      </div>
-    </section>
     
   </body>
 </html>
